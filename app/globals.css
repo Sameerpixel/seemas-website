@@ -23,3 +23,58 @@ body {
 .animate-scroll {
   animation: scrollGallery 28s linear infinite;
 }
+
+@keyframes softFade {
+  0% {
+    opacity: 0.35;
+    letter-spacing: 0.18em;
+  }
+
+  50% {
+    opacity: 1;
+    letter-spacing: 0.28em;
+  }
+
+  100% {
+    opacity: 0.35;
+    letter-spacing: 0.18em;
+  }
+}
+
+.soft-fade-text {
+  animation: softFade 6s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floatX {
+  0% {
+    transform: translateX(-20%) translateY(-50%);
+  }
+
+  50% {
+    transform: translateX(90vw) translateY(-50%);
+  }
+
+  100% {
+    transform: translateX(-20%) translateY(-50%);
+  }
+}
+
+@keyframes scrollVertical {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}

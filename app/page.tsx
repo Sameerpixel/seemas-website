@@ -1,166 +1,251 @@
 const images = [
   {
-    src: "/images/hero-1.webp",
-    title: "Emotional Wellness",
+    year: "1997",
+    title: "Beginning The Journey",
   },
   {
-    src: "/images/hero-2.webp",
-    title: "Compassionate Therapy",
+    year: "2004",
+    title: "Educational Advocacy",
   },
   {
-    src: "/images/hero-3.webp",
-    title: "Personal Growth",
+    year: "2010",
+    title: "Mental Health Initiatives",
   },
   {
-    src: "/images/hero-4.webp",
-    title: "Mental Balance",
+    year: "2016",
+    title: "Family Systems & Inclusion",
   },
   {
-    src: "/images/hero-5.webp",
-    title: "Safe Space",
+    year: "Today",
+    title: "Making Lived Experiences Matter",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f3ece4] text-[#2d2a26]">
+    <main
+      className="relative min-h-screen overflow-hidden text-[#2d2a26]"
+      style={{
+        fontFamily: "'Bahnschrift SemiCondensed', sans-serif",
+        background:
+          "linear-gradient(135deg, #f5f1ec 0%, #eef2f7 45%, #f7f3ef 100%)",
+      }}
+    >
+      {/* BACKGROUND GLOWS */}
+      <div className="absolute left-[-120px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#dfe8f3]/50 blur-3xl" />
 
-      {/* BACKGROUND LAYERS */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,177,120,0.18),transparent_30%)]" />
+      <div className="absolute bottom-[-150px] right-[-100px] h-[380px] w-[380px] rounded-full bg-[#f0dfe3]/40 blur-3xl" />
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(112,146,190,0.12),transparent_35%)]" />
+      {/* FLOATING TITLE SYSTEM */}
+      <div className="sticky top-4 z-50 px-6">
 
-      <div className="absolute inset-0 opacity-[0.04] bg-[url('https://www.transparenttextures.com/patterns/noise.png')]" />
+        <div className="flex flex-col items-start">
 
-      {/* TOP BAR */}
-     {/* TOP BAR */}
-<div className="relative z-20 border-b border-[#d8c5aa]/60 bg-[#efe1cf]/80 backdrop-blur-md">
-  
-  <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-6 py-4">
-    
-    <div className="h-[1px] w-12 bg-[#b89568]/50" />
+          {/* TITLE BLOB */}
+          <div className="relative rounded-[2.8rem] border border-white/30 bg-white/70 px-10 py-6 shadow-[0_10px_40px_rgba(0,0,0,0.05)] backdrop-blur-2xl">
 
-    <p className="text-center text-sm font-medium tracking-[0.18em] text-[#6a5240] uppercase">
-      Seeking Help Is Taking Responsibility
-    </p>
+            <div className="absolute left-0 top-1/2 h-40 w-40 -translate-y-1/2 animate-[floatX_14s_ease-in-out_infinite] rounded-full bg-[#ead9dc]/60 blur-3xl" />
 
-    <div className="h-[1px] w-12 bg-[#b89568]/50" />
+            <h1 className="relative z-20 text-left text-3xl font-black tracking-[-0.05em] text-[#241f1b] md:text-5xl">
+              Dr Seema Girija Lal PhD
+            </h1>
+          </div>
 
-  </div>
-</div>
+          {/* MOVING THREAD */}
+          <div className="mt-4 w-full overflow-hidden">
 
-      <section className="relative z-10 mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-center gap-12 px-6 py-10 lg:grid-cols-[1.05fr_0.95fr]">
-        
-        {/* LEFT CONTENT */}
-        <div>
-          
-          <p className="mb-5 text-xs uppercase tracking-[0.35em] text-[#8c6a43]">
-            Mental Health • Education • Advocacy
-          </p>
+            <div className="inline-block rounded-full border border-white/30 bg-white/60 px-6 py-3 backdrop-blur-2xl">
 
-          <h1 className="max-w-2xl text-5xl font-semibold leading-tight text-[#2b2622] md:text-7xl">
-            Dr. Seema Girija Lal
-          </h1>
+              <div className="whitespace-nowrap animate-[marquee_38s_linear_infinite] text-[22px] font-semibold tracking-[0.28em] text-[#5f4a51]">
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-[#5c534c]">
-            Mental health, disability, and education consultant focused on
-            creating meaningful change through lived experiences, empowerment,
-            advocacy, and emotional well-being.
-          </p>
+                <span className="uppercase">
+                  MAKING LIVED EXPERIENCES MATTER
+                </span>
 
-          {/* ACTION TILES */}
-          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
-            
-            {/* KNOW MORE TILE */}
-            <div className="group overflow-hidden rounded-[2rem] border border-[#dbc7ab] bg-[#edd5ae] shadow-[0_12px_40px_rgba(120,92,58,0.08)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(120,92,58,0.14)]">
-              
-              <div className="relative h-[190px] overflow-hidden">
-                <img
-                  src="/images/hero-1.webp"
-                  alt="About Seema"
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                />
+                <span className="mx-10 text-[#b09399]">
+                  |
+                </span>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2e241d]/40 to-transparent" />
+                <span className="italic">
+                  Understanding Vulnerability, Agency And Empowerment
+                </span>
+
+                <span className="mx-20 text-[#b09399]">
+                  •
+                </span>
+
+                <span className="uppercase">
+                  MAKING LIVED EXPERIENCES MATTER
+                </span>
+
+                <span className="mx-10 text-[#b09399]">
+                  |
+                </span>
+
+                <span className="italic">
+                  Understanding Vulnerability, Agency And Empowerment
+                </span>
+
               </div>
 
-              <div className="p-5">
-                <p className="text-[11px] uppercase tracking-[0.25em] text-[#7d5d38]">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* MAIN SECTION */}
+      <section className="relative z-10 mx-auto h-[calc(100vh-180px)] max-w-[1750px] px-6 py-6">
+
+        {/* FIELD TILES */}
+        <div className="mb-6 grid grid-cols-5 gap-4">
+
+          <div className="rounded-full border border-[#dbe6f0] bg-[#eef4fa]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#4d6781] shadow-sm backdrop-blur-xl">
+            Mental Health
+          </div>
+
+          <div className="rounded-full border border-[#eedde1] bg-[#faf4f5]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#8b5d66] shadow-sm backdrop-blur-xl">
+            Education
+          </div>
+
+          <div className="rounded-full border border-[#dbe6f0] bg-[#eef4fa]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#4d6781] shadow-sm backdrop-blur-xl">
+            Advocacy
+          </div>
+
+          <div className="rounded-full border border-[#eedde1] bg-[#faf4f5]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#8b5d66] shadow-sm backdrop-blur-xl">
+            Networking
+          </div>
+
+          <div className="rounded-full border border-[#dbe6f0] bg-[#eef4fa]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#4d6781] shadow-sm backdrop-blur-xl">
+            Disability
+          </div>
+
+        </div>
+
+        {/* MAIN GRID */}
+        <div className="grid h-[calc(100%-90px)] grid-cols-[40%_40%_20%] gap-5">
+
+          {/* KNOW MORE */}
+          <div className="flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/70 shadow-[0_12px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl">
+
+            <div className="relative h-[48%] overflow-hidden bg-[linear-gradient(135deg,#edf2f7_0%,#f7f1f2_100%)]">
+
+              {/* SOFT PLACEHOLDER */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_60%)]" />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1f1b18]/35 via-transparent to-transparent" />
+
+              <div className="absolute bottom-0 p-7 text-[#4d4641]">
+
+                <p className="text-[11px] uppercase tracking-[0.24em] text-[#7a6b66]">
                   About The Therapist
                 </p>
 
-                <h3 className="mt-2 text-xl font-semibold text-[#2d2925]">
-                  Know More About Me
-                </h3>
-
-                <a
-                  href="/explore"
-                  className="mt-5 inline-block rounded-full bg-[#5d86b4] px-5 py-2.5 text-sm text-white transition hover:bg-[#4b739f]"
-                >
+                <h2 className="mt-2 text-5xl font-semibold">
                   Know More
-                </a>
+                </h2>
+
               </div>
+
             </div>
 
-            {/* GET HELP TILE */}
-            <div className="group overflow-hidden rounded-[2rem] border border-[#dbc7ab] bg-[#edd5ae] shadow-[0_12px_40px_rgba(120,92,58,0.08)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(120,92,58,0.14)]">
-              
-              <div className="relative h-[190px] overflow-hidden">
-                <img
-                  src="/images/hero-6.webp"
-                  alt="Get Help"
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                />
+            <div className="flex flex-1 flex-col justify-between p-8">
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2e241d]/40 to-transparent" />
-              </div>
+              <p className="text-[21px] leading-[1.7] text-[#4d4641]">
+                Explore the philosophy, lived experiences,
+                interdisciplinary practice, and advocacy shaping
+                over twenty-five years of meaningful work.
+              </p>
 
-              <div className="p-5">
-                <p className="text-[11px] uppercase tracking-[0.25em] text-[#7d5d38]">
+              <a
+                href="/explore"
+                className="inline-flex w-fit items-center rounded-full border border-[#dce7f1] bg-[#eef4fa] px-9 py-5 text-[20px] uppercase tracking-[0.15em] text-[#4d6781] transition hover:bg-[#e4edf6]"
+              >
+                Explore More
+              </a>
+
+            </div>
+          </div>
+
+          {/* GET HELP */}
+          <div className="flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/70 shadow-[0_12px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl">
+
+            <div className="relative h-[48%] overflow-hidden bg-[linear-gradient(135deg,#edf2f7_0%,#f7f1f2_100%)]">
+
+              {/* SOFT PLACEHOLDER */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_60%)]" />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1f1b18]/35 via-transparent to-transparent" />
+
+              <div className="absolute bottom-0 p-7 text-[#4d4641]">
+
+                <p className="text-[11px] uppercase tracking-[0.24em] text-[#7a6b66]">
                   Start Your Journey
                 </p>
 
-                <h3 className="mt-2 text-xl font-semibold text-[#2d2925]">
-                  Get Professional Support
-                </h3>
-
-                <button className="mt-5 rounded-full bg-[#c9787f] px-5 py-2.5 text-sm text-white transition hover:bg-[#b76870]">
+                <h2 className="mt-2 text-5xl font-semibold">
                   Get Help
-                </button>
+                </h2>
+
               </div>
+
+            </div>
+
+            <div className="flex flex-1 flex-col justify-between p-8">
+
+              <p className="text-[21px] leading-[1.7] text-[#4d4641]">
+                Professional consultations focused on emotional
+                wellness, disability, family systems, education,
+                and sustainable empowerment.
+              </p>
+
+              <button className="w-fit rounded-full border border-[#eedde1] bg-[#faf4f5] px-9 py-5 text-[20px] uppercase tracking-[0.15em] text-[#8b5d66] transition hover:bg-[#f3e9eb]">
+                Book Consultation
+              </button>
+
             </div>
           </div>
-        </div>
 
-        {/* RIGHT MOVING GALLERY */}
-        <div className="relative h-[540px] overflow-hidden rounded-[2.5rem]">
-          
-          <div className="animate-scroll flex flex-col gap-5">
-            {[...images, ...images].map((image, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-[2rem] border border-[#d9c4a7] shadow-[0_12px_45px_rgba(82,58,36,0.12)]"
-              >
-                <img
-                  src={image.src}
-                  alt={image.title}
-                  className="h-[250px] w-full object-cover transition duration-700 group-hover:scale-105"
-                />
+          {/* MOVING GALLERY */}
+          <div className="h-full overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/70 p-4 shadow-[0_12px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl">
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2d231d]/70 via-[#2d231d]/10 to-transparent" />
+            <div
+              className="flex flex-col gap-4"
+              style={{
+                animation: "scrollVertical 20s linear infinite",
+              }}
+            >
 
-                <div className="absolute bottom-0 p-6 text-white">
-                  <p className="text-[11px] uppercase tracking-[0.25em] text-[#e4d0b8]">
-                    Mental Wellness
-                  </p>
+              {[...images, ...images].map((item, index) => (
+                <div
+                  key={index}
+                  className="relative h-[220px] flex-shrink-0 overflow-hidden rounded-[1.8rem] border border-white/40 bg-[linear-gradient(135deg,#edf2f7_0%,#f7f1f2_100%)] shadow-sm"
+                >
 
-                  <h2 className="mt-2 text-2xl font-semibold">
-                    {image.title}
-                  </h2>
+                  {/* SOFT PLACEHOLDER BACKGROUND */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_60%)]" />
+
+                  {/* YEAR */}
+                  <div className="absolute top-4 left-4 rounded-full bg-white/90 px-4 py-2 text-[14px] font-bold tracking-[0.15em] text-[#5f4a51] backdrop-blur-xl">
+                    {item.year}
+                  </div>
+
+                  {/* TITLE */}
+                  <div className="absolute bottom-0 p-5 text-[#4d4641]">
+
+                    <h3 className="text-[18px] font-semibold leading-snug">
+                      {item.title}
+                    </h3>
+
+                  </div>
+
                 </div>
-              </div>
-            ))}
+              ))}
+
+            </div>
+
           </div>
+
         </div>
       </section>
     </main>
