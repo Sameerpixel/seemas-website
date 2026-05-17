@@ -33,11 +33,25 @@ export default function ExplorePage() {
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Seema focuses on creating a safe and supportive space where clients
-            feel heard, understood, and empowered. Her therapeutic approach combines
-            empathy, evidence-based counseling methods, and emotional guidance tailored
-            to each individual.
-          </p>
+  Dr. Seema Girija Lal (Ph.D.) is a mental health, disability, and
+  education consultant and trainer with over twenty-five years of
+  professional experience across non-governmental organizations and
+  private sector institutions in India and the United Arab Emirates.
+</p>
+
+<p className="mt-6 text-lg leading-8 text-slate-600">
+  She currently offers online and in-person sessions, with a strong
+  focus on family systems, schooling, and all stakeholders involved.
+  Her work is deeply rooted in lived experiences, agency,
+  vulnerability, and empowerment as foundations for sustainable change.
+</p>
+
+<p className="mt-6 text-lg leading-8 text-slate-600">
+  Holding a Doctoral degree from Vrije University, Amsterdam,
+  alongside advanced qualifications in psychology, special education,
+  and social entrepreneurship, her interdisciplinary approach blends
+  academic depth with compassionate practice.
+</p>
 
           <a
             href="/about"
