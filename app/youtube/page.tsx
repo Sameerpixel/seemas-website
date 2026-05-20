@@ -1,4 +1,5 @@
 import {client} from "@/sanity/lib/client";
+import FloatingBackButton from "@/components/FloatingBackButton";
 
 const youtubeQuery = `
 *[_type == "youtube"] | order(_createdAt desc){
@@ -40,6 +41,10 @@ export default async function YoutubePage() {
       }}
     >
 
+     <FloatingBackButton
+  href="/explore"
+  label="Back To Explore"
+/>
       {/* HEADER */}
       <div className="mx-auto max-w-[1500px]">
 

@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-
+import FloatingBackButton from "@/components/FloatingBackButton";
 import { PortableText } from "@portabletext/react";
 
 async function getArticle(slug: string) {
@@ -21,6 +22,30 @@ async function getArticle(slug: string) {
   );
 }
 
+type Article = {
+  title: string;
+  category: string;
+  publishedAt: string;
+  excerpt: string;
+
+  body: {
+    _type: string;
+    _key: string;
+    children?: {
+      _type: string;
+      text: string;
+      _key: string;
+    }[];
+  }[];
+
+  coverImage?: {
+    asset?: {
+      _ref: string;
+      _type: string;
+    };
+  };
+};
+
 export default async function ArticlePage({
   params,
 }: {
@@ -29,7 +54,7 @@ export default async function ArticlePage({
 
   const { slug } = await params;
 
-  const article = await getArticle(slug);
+  const article: Article | null = await getArticle(slug);
 
   if (!article) {
     return (
@@ -48,27 +73,10 @@ export default async function ArticlePage({
     >
 
       {/* BACKGROUND GLOWS */}
-      <div className="fixed left-[-120px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#ddd1f8]/35 blur-3xl" />
-
-      <div className="fixed bottom-[-160px] right-[-120px] h-[420px] w-[420px] rounded-full bg-[#ece2ff]/50 blur-3xl" />
-
-      {/* FLOATING NAV */}
-      <div className="fixed left-0 top-0 z-50 w-full px-6 py-5">
-
-        <div className="mx-auto flex max-w-[1450px] items-center justify-between rounded-full border border-white/30 bg-white/55 px-8 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] backdrop-blur-2xl">
-
-          <a
-            href="/articles"
-            className="text-[13px] uppercase tracking-[0.28em] text-[#7c64b3]"
-          >
-            ← Back To Articles
-          </a>
-
-          <div className="h-3 w-3 rounded-full bg-[#9c7cf0]" />
-
-        </div>
-
-      </div>
+     <FloatingBackButton
+  href="/articles"
+  label="Back To Articles"
+/>;
 
       {/* HERO */}
       <section className="relative overflow-hidden pt-36">

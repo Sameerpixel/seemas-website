@@ -1,3 +1,4 @@
+import FloatingBackButton from "@/components/FloatingBackButton";
 const sections = [
   {
     title: "About",
@@ -82,29 +83,33 @@ export default function ExplorePage() {
           "linear-gradient(135deg, #f3efe9 0%, #edf3f8 42%, #f8f4ef 100%)",
       }}
     >
+      <FloatingBackButton
+  href="/"
+  label="Back To Home"
+/>
       {/* BACKGROUND */}
       <div className="absolute left-[-120px] top-[-100px] h-[420px] w-[420px] rounded-full bg-[#dce6f2]/60 blur-3xl" />
 
       <div className="absolute bottom-[-120px] right-[-100px] h-[360px] w-[360px] rounded-full bg-[#f0dde2]/50 blur-3xl" />
 
-      {/* HEADER */}
-      <div className="sticky top-4 z-50 px-6 pt-4">
+     {/* HEADER */}
+<div className="relative z-20 mx-auto max-w-[1750px] px-6 pt-32">
 
-        <div className="flex flex-col items-start">
+  <div className="flex flex-col items-start">
 
-          <div className="relative rounded-[2.8rem] border border-white/30 bg-white/70 px-10 py-6 shadow-[0_10px_40px_rgba(0,0,0,0.05)] backdrop-blur-2xl">
+    <div className="relative rounded-[2.8rem] border border-white/30 bg-white/70 px-10 py-6 shadow-[0_10px_40px_rgba(0,0,0,0.05)] backdrop-blur-2xl">
 
-            <div className="absolute left-0 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-[#ead9dc]/60 blur-3xl" />
+      <div className="absolute left-0 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-[#ead9dc]/60 blur-3xl" />
 
-            <h1 className="relative z-20 text-left text-3xl font-black tracking-[-0.05em] text-[#241f1b] md:text-5xl">
-              Explore The Journey
-            </h1>
+      <h1 className="relative z-20 text-left text-3xl font-black tracking-[-0.05em] text-[#241f1b] md:text-5xl">
+        Explore The Journey
+      </h1>
 
-          </div>
+    </div>
 
-        </div>
-      </div>
+  </div>
 
+</div>
       {/* CONTENT */}
       <section className="relative z-10 mx-auto max-w-[1750px] px-6 pb-20 pt-8">
 

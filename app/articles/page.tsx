@@ -3,6 +3,7 @@ import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { articlesQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
+import FloatingBackButton from "@/components/FloatingBackButton";
 
 type Article = {
   title: string;
@@ -29,22 +30,32 @@ export default async function ArticlesPage() {
           "linear-gradient(135deg,#f5f0ff 0%,#f7f4ff 40%,#faf8ff 100%)",
       }}
     >
+      <FloatingBackButton
+  href="/explore"
+  label="Back To Explore"
+/>
       {/* BACKGROUND GLOWS */}
       <div className="absolute left-[-100px] top-[-80px] h-[380px] w-[380px] rounded-full bg-[#d8c9f5]/40 blur-3xl" />
 
       <div className="absolute bottom-[-120px] right-[-100px] h-[340px] w-[340px] rounded-full bg-[#ece2ff]/50 blur-3xl" />
 
       {/* HEADER */}
-      <div className="sticky top-4 z-50 px-6 pt-4">
-        <div className="inline-flex items-center rounded-[2.6rem] border border-[#d8c9f5]/40 bg-white/70 px-10 py-6 shadow-[0_10px_40px_rgba(0,0,0,0.05)] backdrop-blur-2xl">
-          <div className="mr-5 h-5 w-5 rounded-full bg-[#8f6ad9]" />
+<div className="relative z-20 mx-auto max-w-[1750px] px-6 pt-32">
 
-          <h1 className="text-5xl font-black tracking-[-0.05em] text-[#241f1b]">
-            Articles
-          </h1>
-        </div>
-      </div>
+  <div className="inline-flex items-center rounded-[2.6rem] border border-[#d8c9f5]/40 bg-white/70 px-10 py-6 shadow-[0_10px_40px_rgba(0,0,0,0.05)] backdrop-blur-2xl">
 
+    <div className="mr-5 h-5 w-5 rounded-full bg-[#8f6ad9]" />
+
+    <h1 className="text-5xl font-black tracking-[-0.05em] text-[#241f1b]">
+      Articles
+    </h1>
+
+  </div>
+
+</div>
+
+      
+   
       {/* CONTENT */}
       <section className="relative z-10 mx-auto max-w-[1750px] px-6 pb-24 pt-10">
         {/* ARTICLE GRID */}
