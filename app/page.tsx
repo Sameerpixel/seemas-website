@@ -1,27 +1,24 @@
-const images = [
-  {
-    year: "1997",
-    title: "Beginning The Journey",
-  },
-  {
-    year: "2004",
-    title: "Educational Advocacy",
-  },
-  {
-    year: "2010",
-    title: "Mental Health Initiatives",
-  },
-  {
-    year: "2016",
-    title: "Family Systems & Inclusion",
-  },
-  {
-    year: "Today",
-    title: "Making Lived Experiences Matter",
-  },
-];
+import Image from "next/image";
 
-export default function Home() {
+import { client } from "@/sanity/lib/client";
+import { featuredGalleryQuery } from "@/sanity/lib/queries";
+import { urlFor } from "@/sanity/lib/image";
+
+type GalleryItem = {
+  title: string;
+  date?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: string;
+    };
+  };
+};
+
+export default async function Home() {
+
+  const images: GalleryItem[] =
+    await client.fetch(featuredGalleryQuery);
   return (
     <main
       className="relative min-h-screen overflow-hidden text-[#2d2a26]"
@@ -199,53 +196,68 @@ export default function Home() {
                 and sustainable empowerment.
               </p>
 
-              <button className="w-fit rounded-full border border-[#eedde1] bg-[#faf4f5] px-9 py-5 text-[20px] uppercase tracking-[0.15em] text-[#8b5d66] transition hover:bg-[#f3e9eb]">
-                Book Consultation
-              </button>
+              <a
+  href="https://wa.me/917994155575"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block w-fit rounded-full border border-[#eedde1] bg-[#faf4f5] px-9 py-5 text-[20px] uppercase tracking-[0.15em] text-[#8b5d66] transition hover:bg-[#f3e9eb]"
+>
+  Book Consultation
+</a>
 
             </div>
           </div>
 
           {/* MOVING GALLERY */}
-          <div className="h-full overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/70 p-4 shadow-[0_12px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl">
+<div className="h-full overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/70 p-4 shadow-[0_12px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl">
 
-            <div
-              className="flex flex-col gap-4"
-              style={{
-                animation: "scrollVertical 20s linear infinite",
-              }}
-            >
+  <div
+    className="flex flex-col gap-4"
+    style={{
+      animation: "scrollVertical 20s linear infinite",
+    }}
+  >
 
-              {[...images, ...images].map((item, index) => (
-                <div
-                  key={index}
-                  className="relative h-[220px] flex-shrink-0 overflow-hidden rounded-[1.8rem] border border-white/40 bg-[linear-gradient(135deg,#edf2f7_0%,#f7f1f2_100%)] shadow-sm"
-                >
+    {[...images, ...images].map((item, index) => (
 
-                  {/* SOFT PLACEHOLDER BACKGROUND */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_60%)]" />
+      <div
+        key={index}
+        className="relative h-[220px] flex-shrink-0 overflow-hidden rounded-[1.8rem] border border-white/40 shadow-sm"
+      >
 
-                  {/* YEAR */}
-                  <div className="absolute top-4 left-4 rounded-full bg-white/90 px-4 py-2 text-[14px] font-bold tracking-[0.15em] text-[#5f4a51] backdrop-blur-xl">
-                    {item.year}
-                  </div>
+        {item.image?.asset?._ref && (
+          <Image
+            src={urlFor(item.image).url()}
+            alt={item.title}
+            fill
+            sizes="220px"
+            className="object-cover"
+          />
+        )}
 
-                  {/* TITLE */}
-                  <div className="absolute bottom-0 p-5 text-[#4d4641]">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
-                    <h3 className="text-[18px] font-semibold leading-snug">
-                      {item.title}
-                    </h3>
-
-                  </div>
-
-                </div>
-              ))}
-
-            </div>
-
+        {item.date && (
+          <div className="absolute top-4 left-4 rounded-full bg-white/90 px-4 py-2 text-[14px] font-bold tracking-[0.15em] text-[#5f4a51] backdrop-blur-xl">
+            {new Date(item.date).getFullYear()}
           </div>
+        )}
 
+        <div className="absolute bottom-0 p-5 text-white">
+
+          <h3 className="text-[18px] font-semibold leading-snug">
+            {item.title}
+          </h3>
+
+        </div>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</div>
         </div>
       </section>
     </main>
