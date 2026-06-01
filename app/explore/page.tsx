@@ -1,4 +1,8 @@
+import { client } from "@/sanity/lib/client";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import { testimonialsQuery } from "@/sanity/lib/queries";
 import FloatingBackButton from "@/components/FloatingBackButton";
+
 const sections = [
   {
     title: "About",
@@ -73,7 +77,10 @@ const sections = [
   },
 ];
 
-export default function ExplorePage() {
+export default async function ExplorePage() {
+
+  const testimonials =
+    await client.fetch(testimonialsQuery);
   return (
     <main
       className="relative min-h-screen overflow-hidden text-[#2d2a26]"
@@ -181,7 +188,16 @@ export default function ExplorePage() {
 
         </div>
 
+           </section>
+
+      <section className="relative z-10 mx-auto max-w-[1750px] px-6 pb-24">
+
+        <TestimonialCarousel
+          testimonials={testimonials}
+        />
+
       </section>
+
     </main>
   );
 }

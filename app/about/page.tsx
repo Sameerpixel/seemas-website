@@ -179,14 +179,12 @@ function NavigateGrid() {
    BOOKING SECTION COMPONENTS
 ════════════════════════════════════════ */
 
-/* ── Tab switcher: Video | Email ── */
 function BookingSection() {
   const [tab, setTab] = useState("video");
 
   return (
     <section className="mx-auto mt-24 max-w-[1750px] px-6 pb-32">
 
-      {/* Heading */}
       <FadeIn>
         <div className="mb-10">
           <p className="text-[12px] uppercase tracking-[0.3em] text-[#25557c] mb-3">Sessions & Pricing</p>
@@ -195,7 +193,6 @@ function BookingSection() {
         </div>
       </FadeIn>
 
-      {/* Tab toggle */}
       <FadeIn delay={0.05}>
         <div className="inline-flex rounded-[2rem] border border-[#9fc9ec] bg-[#e3f0fb]/95 backdrop-blur-2xl p-2 mb-10 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
           {[
@@ -218,11 +215,7 @@ function BookingSection() {
       </FadeIn>
 
       {tab === "video" ? <VideoBooking /> : <EmailBooking />}
-
-      {/* Rescheduling Policy */}
       <ReschedulingPolicy />
-
-      {/* Boundaries */}
       <BoundariesSection />
 
     </section>
@@ -247,7 +240,6 @@ function VideoBooking() {
 
   return (
     <div>
-      {/* Price hero */}
       <FadeIn>
         <div className="relative overflow-hidden rounded-[3rem] border border-[#9fc9ec] bg-[#25557c] p-12 mb-8 shadow-[0_12px_40px_rgba(37,85,124,0.2)]">
           <div className="pointer-events-none absolute right-[-60px] top-[-60px] h-[280px] w-[280px] rounded-full bg-[#1d4568]/50" />
@@ -266,7 +258,6 @@ function VideoBooking() {
         </div>
       </FadeIn>
 
-      {/* Available timings + scheduling note */}
       <div className="grid grid-cols-[1fr_1fr] gap-6 mb-8">
         <FadeIn delay={0.05}>
           <div className="rounded-[3rem] border border-[#9fc9ec] bg-[#e3f0fb]/95 backdrop-blur-2xl p-10 shadow-[0_12px_40px_rgba(0,0,0,0.04)] h-full">
@@ -289,13 +280,13 @@ function VideoBooking() {
             <p className="text-[12px] uppercase tracking-[0.3em] text-[#25557c] mb-4">Scheduling Notes</p>
             <div className="space-y-4">
               {[
-                { icon: "—", text: "Exact days and times are confirmed every Friday for the coming week." },
-                { icon: "—", text: "No advance booking beyond one week." },
-                { icon: "—", text: "Slot stays open to all until the session link is sent to you." },
-              ].map((n, i) => (
+                "Exact days and times are confirmed every Friday for the coming week.",
+                "No advance booking beyond one week.",
+                "Slot stays open to all until the session link is sent to you.",
+              ].map((note, i) => (
                 <div key={i} className="flex items-start gap-4 rounded-[1.8rem] bg-[#d5e9f8]/60 border border-[#9fc9ec] px-5 py-4">
-                  <span className="text-[22px] font-black text-[#25557c]">{n.icon}</span>
-                  <p className="text-[16px] text-[#4d4641] leading-relaxed">{n.text}</p>
+                  <div className="flex-shrink-0 w-2 h-2 rounded-full bg-[#25557c] mt-2" />
+                  <p className="text-[16px] text-[#4d4641] leading-relaxed">{note}</p>
                 </div>
               ))}
             </div>
@@ -303,7 +294,6 @@ function VideoBooking() {
         </FadeIn>
       </div>
 
-      {/* Booking steps */}
       <FadeIn>
         <p className="text-[12px] uppercase tracking-[0.3em] text-[#25557c] mb-4">How to Book</p>
       </FadeIn>
@@ -323,7 +313,6 @@ function VideoBooking() {
         ))}
       </div>
 
-      {/* Session summaries + important notes */}
       <div className="grid grid-cols-[1.2fr_1fr] gap-6">
         <FadeIn delay={0.05}>
           <div className="rounded-[3rem] border border-[#9fc9ec] bg-[#e3f0fb]/95 backdrop-blur-2xl p-10 shadow-[0_12px_40px_rgba(0,0,0,0.04)]">
@@ -370,14 +359,13 @@ function VideoBooking() {
 /* ── EMAIL BOOKING ── */
 function EmailBooking() {
   const plans = [
-    { duration: "1 Day", access: "Unlimited emails or 15 min voice note", price: "500" },
-    { duration: "3 Days", access: "Unlimited emails or 30 min voice note", price: "1000" },
-    { duration: "1 Week", access: "Unlimited emails or 1 hour voice note", price: "2000", featured: true },
+    { duration: "1 Day",  access: "Unlimited emails or 15 min voice note",  price: "500" },
+    { duration: "3 Days", access: "Unlimited emails or 30 min voice note",  price: "1000" },
+    { duration: "1 Week", access: "Unlimited emails or 1 hour voice note",  price: "2000", featured: true },
   ];
 
   return (
     <div>
-      {/* Hero */}
       <FadeIn>
         <div className="relative overflow-hidden rounded-[3rem] border border-[#9fc9ec] bg-[#25557c] p-12 mb-8 shadow-[0_12px_40px_rgba(37,85,124,0.2)]">
           <div className="pointer-events-none absolute right-[-60px] top-[-60px] h-[280px] w-[280px] rounded-full bg-[#1d4568]/50" />
@@ -395,7 +383,6 @@ function EmailBooking() {
         </div>
       </FadeIn>
 
-      {/* Response hours info */}
       <FadeIn delay={0.05}>
         <div className="rounded-[3rem] border border-[#9fc9ec] bg-[#e3f0fb]/95 backdrop-blur-2xl p-10 mb-8 shadow-[0_12px_40px_rgba(0,0,0,0.04)]">
           <p className="text-[12px] uppercase tracking-[0.3em] text-[#25557c] mb-4">Response Window</p>
@@ -413,7 +400,6 @@ function EmailBooking() {
         </div>
       </FadeIn>
 
-      {/* Pricing plans */}
       <FadeIn>
         <p className="text-[12px] uppercase tracking-[0.3em] text-[#25557c] mb-4">Plans & Pricing (INR)</p>
       </FadeIn>
@@ -427,8 +413,8 @@ function EmailBooking() {
                 borderColor: p.featured ? "#1d4568" : "#9fc9ec",
                 boxShadow: p.featured ? "0 20px 60px rgba(37,85,124,0.22)" : undefined,
               }}
-              onMouseEnter={e => { if (!p.featured) { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 24px 60px rgba(37,85,124,0.12)"; }}}
-              onMouseLeave={e => { if (!p.featured) { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.04)"; }}}
+              onMouseEnter={e => { if (!p.featured) { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 24px 60px rgba(37,85,124,0.12)"; } }}
+              onMouseLeave={e => { if (!p.featured) { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.04)"; } }}
             >
               {p.featured && (
                 <div className="mb-4 inline-flex">
@@ -520,7 +506,7 @@ function ReschedulingPolicy() {
                 onClick={() => setOpen(isOpen ? null : i)}
                 className="w-full text-left rounded-[2.5rem] border backdrop-blur-2xl overflow-hidden transition-all duration-300"
                 style={{
-                  background: isOpen ? "#e3f0fb" : "#e3f0fb/95",
+                  background: "#e3f0fb",
                   borderColor: isOpen ? "#25557c" : "#9fc9ec",
                   boxShadow: isOpen ? "0 12px 40px rgba(37,85,124,0.1)" : "none",
                 }}
@@ -537,7 +523,6 @@ function ReschedulingPolicy() {
                     +
                   </span>
                 </div>
-
                 <div
                   className="overflow-hidden transition-all duration-500"
                   style={{ maxHeight: isOpen ? "400px" : "0px", opacity: isOpen ? 1 : 0 }}
@@ -562,7 +547,6 @@ function ReschedulingPolicy() {
         })}
       </div>
 
-      {/* Closing note */}
       <FadeIn delay={0.1}>
         <div className="mt-6 rounded-[2.5rem] border border-[#9fc9ec] bg-[#e3f0fb]/95 backdrop-blur-2xl px-10 py-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
           <p className="text-[17px] leading-[1.85] text-[#4d4641] italic">
@@ -588,7 +572,6 @@ function BoundariesSection() {
         </div>
       </FadeIn>
 
-      {/* Is / Is Not toggle */}
       <FadeIn delay={0.05}>
         <div className="grid grid-cols-2 gap-6 mb-6">
           <button
@@ -627,22 +610,18 @@ function BoundariesSection() {
         </div>
       </FadeIn>
 
-      {/* Three info cards */}
       <div className="grid grid-cols-3 gap-6">
         {[
           {
             title: "During Combined Sessions",
-            icon: "—",
             body: "In shared sessions, anger and disagreement are valid — as information, not harm. Shaming or hostile language is gently interrupted. When a participant is below 18, their emotional and psychological safety is prioritised above all.",
           },
           {
             title: "Confidentiality & Safety",
-            icon: "—",
             body: "Confidentiality is always respected within ethical and safety limits. If there are signs of significant dysregulation or a threat to personal or relational safety, the discretion to inform a trusted support person rests with the facilitator. You will always be informed before this happens whenever possible.",
           },
           {
             title: "Why Boundaries Matter",
-            icon: "—",
             body: "Boundaries help sustain safety, trust, and continuity. They centre emotional well-being, ensure each person is respected, and make room for somatic grounding and intentional pauses — so clarity is not sought through overwhelm, collapse, or emotional pressure.",
           },
         ].map((card, i) => (
@@ -652,7 +631,9 @@ function BoundariesSection() {
               onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 24px 60px rgba(37,85,124,0.12)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.04)"; }}
             >
-              <div className="text-[36px] font-black text-[#25557c] mb-4">{card.icon}</div>
+              <div className="w-10 h-10 rounded-[1rem] bg-[#d5e9f8] border border-[#9fc9ec] mb-5 flex items-center justify-center">
+                <div className="w-3 h-3 rounded-full bg-[#25557c]" />
+              </div>
               <h4 className="text-[20px] font-black text-[#241f1b] mb-3">{card.title}</h4>
               <p className="text-[16px] leading-[1.85] text-[#4d4641]">{card.body}</p>
             </div>
@@ -660,6 +641,130 @@ function BoundariesSection() {
         ))}
       </div>
     </div>
+  );
+}
+
+/* ════════════════════════════════════════
+   DR. SEEMA — BIO SECTION
+════════════════════════════════════════ */
+function DrSeemaSection() {
+  const languages = ["English", "Malayalam", "Tamil", "Hindi"];
+  const focusAreas = [
+    "Mental Health",
+    "Education",
+    "Disability",
+    "Rights-Based Advocacy",
+  ];
+
+  return (
+    <section className="mx-auto mt-14 max-w-[1750px] px-6">
+
+      {/* ── Name / intro hero card ── */}
+      <FadeIn>
+        <div className="relative overflow-hidden rounded-[3rem] border border-[#9fc9ec] bg-[#25557c] p-14 mb-8 shadow-[0_12px_40px_rgba(37,85,124,0.2)]">
+          <div className="pointer-events-none absolute right-[-80px] top-[-80px] h-[360px] w-[360px] rounded-full bg-[#1d4568]/50" />
+          <div className="pointer-events-none absolute bottom-[-60px] left-[-50px] h-[220px] w-[220px] rounded-full bg-[#1d4568]/40" />
+          <div className="relative z-10 max-w-[820px]">
+            <p className="text-[13px] uppercase tracking-[0.3em] text-[#a8d0f4] mb-4">Meet the Practitioner</p>
+            <h2 className="text-[52px] font-black text-white leading-none tracking-[-0.03em]">Dr. Seema Girija Lal</h2>
+            <p className="mt-6 text-[20px] leading-[1.85] text-[#c8dff5]">
+              Dr. Seema offers consultations at the intersection of mental health, education,
+              disability, and rights-based advocacy. Her practice is guided by a deep belief in
+              dignity, inclusion, and collective responsibility — and by principles she strives
+              to live by every day.
+            </p>
+          </div>
+        </div>
+      </FadeIn>
+
+      {/* ── Languages + Focus areas ── */}
+      <div className="grid grid-cols-2 gap-6 mb-8">
+
+        <FadeIn delay={0.05}>
+          <div className="rounded-[3rem] border border-[#9fc9ec] bg-[#e3f0fb]/95 backdrop-blur-2xl p-10 shadow-[0_12px_40px_rgba(0,0,0,0.04)] h-full">
+            <p className="text-[12px] uppercase tracking-[0.3em] text-[#25557c] mb-5">Consultation Languages</p>
+            <div className="flex flex-wrap gap-3">
+              {languages.map((lang) => (
+                <div
+                  key={lang}
+                  className="rounded-[1.4rem] bg-[#25557c] px-6 py-3 text-[16px] font-black text-white"
+                >
+                  {lang}
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.1}>
+          <div className="rounded-[3rem] border border-[#9fc9ec] bg-[#e3f0fb]/95 backdrop-blur-2xl p-10 shadow-[0_12px_40px_rgba(0,0,0,0.04)] h-full">
+            <p className="text-[12px] uppercase tracking-[0.3em] text-[#25557c] mb-5">Areas of Practice</p>
+            <div className="flex flex-wrap gap-3">
+              {focusAreas.map((area) => (
+                <div
+                  key={area}
+                  className="rounded-[1.4rem] border border-[#9fc9ec] bg-[#d5e9f8] px-6 py-3 text-[16px] font-black text-[#25557c]"
+                >
+                  {area}
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+      </div>
+
+      {/* ── Personal details + Guiding principles ── */}
+      <div className="grid grid-cols-[1fr_1.6fr] gap-6 mb-8">
+
+        <FadeIn delay={0.05}>
+          <div className="rounded-[3rem] border border-[#9fc9ec] bg-[#e3f0fb]/95 backdrop-blur-2xl p-10 shadow-[0_12px_40px_rgba(0,0,0,0.04)] h-full">
+            <p className="text-[12px] uppercase tracking-[0.3em] text-[#25557c] mb-6">Personal</p>
+            <div className="space-y-5">
+              {[
+                { label: "Based in",    value: "Kochi, Kerala" },
+                { label: "Married",     value: "22 years" },
+                { label: "Children",    value: "Two sons, aged 20 and 16" },
+              ].map((item) => (
+                <div key={item.label} className="flex flex-col gap-1">
+                  <span className="text-[12px] uppercase tracking-[0.2em] text-[#25557c]">{item.label}</span>
+                  <span className="text-[20px] font-black text-[#241f1b]">{item.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.1}>
+          <div className="rounded-[3rem] border border-[#9fc9ec] bg-[#e3f0fb]/95 backdrop-blur-2xl p-10 shadow-[0_12px_40px_rgba(0,0,0,0.04)] h-full">
+            <p className="text-[12px] uppercase tracking-[0.3em] text-[#25557c] mb-6">Guiding Principles</p>
+            <div className="space-y-6">
+
+              <div className="rounded-[2rem] border border-[#9fc9ec] bg-[#d5e9f8]/60 px-8 py-6">
+                <p className="text-[18px] leading-[1.8] text-[#241f1b] italic font-black">
+                  &ldquo;Do the best you can until you know better. Then when you know better, do better.&rdquo;
+                </p>
+                <p className="mt-3 text-[13px] uppercase tracking-[0.22em] text-[#25557c]">
+                  — Maya Angelou
+                </p>
+              </div>
+
+              <div className="rounded-[2rem] border border-[#9fc9ec] bg-[#d5e9f8]/60 px-8 py-6">
+                <p className="text-[18px] leading-[1.8] text-[#241f1b] italic font-black">
+                  &ldquo;Start where you are. Use what you have. Do what you can.&rdquo;
+                </p>
+                <p className="mt-3 text-[13px] uppercase tracking-[0.22em] text-[#25557c]">
+                  — Arthur Ashe
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </FadeIn>
+
+      </div>
+
+    </section>
   );
 }
 
@@ -686,8 +791,11 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* ── DR. SEEMA BIO ── (new — sits first after header) */}
+      <DrSeemaSection />
+
       {/* ── EDUCATION ── */}
-      <section className="relative z-10 mx-auto mt-14 max-w-[1750px] px-6">
+      <section className="relative z-10 mx-auto mt-24 max-w-[1750px] px-6">
         <div className="mb-8">
           <h2 className="text-[42px] font-black tracking-[-0.04em] text-[#241f1b]">Educational Qualifications</h2>
           <p className="mt-2 text-[20px] text-[#6c625d]">Academic credentials, certifications and publications.</p>

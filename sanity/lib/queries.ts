@@ -39,3 +39,10 @@ export const articlesGalleryQuery = `
   location
 }
 `
+export const testimonialsQuery = `
+*[_type == "testimonial" && featured == true]{
+  quote,
+  name,
+  role
+}
+`;

@@ -95,29 +95,44 @@ export default async function Home() {
       <section className="relative z-10 mx-auto h-[calc(100vh-180px)] max-w-[1750px] px-6 py-6">
 
         {/* FIELD TILES */}
-        <div className="mb-6 grid grid-cols-5 gap-4">
+<div className="mb-6 grid grid-cols-5 gap-4">
 
-          <div className="rounded-full border border-[#dbe6f0] bg-[#eef4fa]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#4d6781] shadow-sm backdrop-blur-xl">
-            Mental Health
-          </div>
+  <a
+    href="/mental-health"
+    className="rounded-full border border-[#dbe6f0] bg-[#eef4fa]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#4d6781] shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:bg-[#e3eef8]"
+  >
+    Mental Health
+  </a>
 
-          <div className="rounded-full border border-[#eedde1] bg-[#faf4f5]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#8b5d66] shadow-sm backdrop-blur-xl">
-            Education
-          </div>
+  <a
+    href="/education"
+    className="rounded-full border border-[#eedde1] bg-[#faf4f5]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#8b5d66] shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:bg-[#f5ebed]"
+  >
+    Education
+  </a>
 
-          <div className="rounded-full border border-[#dbe6f0] bg-[#eef4fa]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#4d6781] shadow-sm backdrop-blur-xl">
-            Advocacy
-          </div>
+  <a
+    href="/advocacy"
+    className="rounded-full border border-[#dbe6f0] bg-[#eef4fa]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#4d6781] shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:bg-[#e3eef8]"
+  >
+    Advocacy
+  </a>
 
-          <div className="rounded-full border border-[#eedde1] bg-[#faf4f5]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#8b5d66] shadow-sm backdrop-blur-xl">
-            Networking
-          </div>
+  <a
+    href="/networking"
+    className="rounded-full border border-[#eedde1] bg-[#faf4f5]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#8b5d66] shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:bg-[#f5ebed]"
+  >
+    Networking
+  </a>
 
-          <div className="rounded-full border border-[#dbe6f0] bg-[#eef4fa]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#4d6781] shadow-sm backdrop-blur-xl">
-            Disability
-          </div>
+  <a
+    href="/disability"
+    className="rounded-full border border-[#dbe6f0] bg-[#eef4fa]/90 py-5 text-center text-[17px] font-semibold uppercase tracking-[0.16em] text-[#4d6781] shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:bg-[#e3eef8]"
+  >
+    Disability
+  </a>
 
-        </div>
+</div>
 
         {/* MAIN GRID */}
         <div className="grid h-[calc(100%-90px)] grid-cols-[40%_40%_20%] gap-5">
