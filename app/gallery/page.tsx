@@ -1,3 +1,4 @@
+export const revalidate = 30;
 import Image from "next/image";
 
 import FloatingBackButton from "@/components/FloatingBackButton";
