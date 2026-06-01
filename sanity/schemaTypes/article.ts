@@ -1,3 +1,4 @@
+export const revalidate = 60;
 import {defineField, defineType} from 'sanity'
 
 export const articleType = defineType({

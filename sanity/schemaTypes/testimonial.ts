@@ -1,3 +1,4 @@
+export const revalidate = 300;
 import { defineField, defineType } from "sanity";
 
 export const testimonialType = defineType({
