@@ -41,6 +41,10 @@ export default async function ArticlesPage() {
  
   const articles: Article[] =
     await client.fetch(articlesQuery);
+    console.log(
+  "FIRST ARTICLE:",
+  JSON.stringify(articles[0], null, 2)
+);
 
   const galleryItems: GalleryItem[] =
     await client.fetch(articlesGalleryQuery);

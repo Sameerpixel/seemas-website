@@ -1,6 +1,7 @@
+import ArticleGallery from "@/components/ArticleGallery";
 import Image from "next/image";
 import Link from "next/link";
-
+import { articlesQuery } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import FloatingBackButton from "@/components/FloatingBackButton";
@@ -10,23 +11,37 @@ async function getArticle(slug: string) {
   return client.fetch(
     `
     *[_type == "article" && slug.current == $slug][0]{
-      title,
-      category,
-      publishedAt,
-      excerpt,
-      body,
-      coverImage
-    }
+  title,
+  category,
+  publishedAt,
+  excerpt,
+  body,
+  coverImage,
+  galleryImages
+}
     `,
     { slug }
   );
 }
-
 type Article = {
   title: string;
   category: string;
   publishedAt: string;
   excerpt: string;
+
+  coverImage?: {
+    asset?: {
+      _ref: string;
+      _type: string;
+    };
+  };
+
+  galleryImages?: {
+    asset?: {
+      _ref: string;
+      _type: string;
+    };
+  }[];
 
   body: {
     _type: string;
@@ -37,13 +52,6 @@ type Article = {
       _key: string;
     }[];
   }[];
-
-  coverImage?: {
-    asset?: {
-      _ref: string;
-      _type: string;
-    };
-  };
 };
 
 export default async function ArticlePage({
@@ -55,6 +63,9 @@ export default async function ArticlePage({
   const { slug } = await params;
 
   const article: Article | null = await getArticle(slug);
+  
+
+  
 
   if (!article) {
     return (
@@ -63,6 +74,10 @@ export default async function ArticlePage({
       </main>
     );
   }
+  const galleryImages = [
+  article.coverImage,
+  ...(article.galleryImages || []),
+].filter(Boolean) as NonNullable<Article["coverImage"]>[];
 
   return (
     <main
@@ -76,7 +91,7 @@ export default async function ArticlePage({
      <FloatingBackButton
   href="/articles"
   label="Back To Articles"
-/>;
+/>
 
       {/* HERO */}
       <section className="relative overflow-hidden pt-36">
@@ -130,6 +145,17 @@ export default async function ArticlePage({
       </section>
 
       {/* ARTICLE BODY */}
+      <section className="relative z-10 pb-12">
+
+  <div className="mx-auto max-w-[1100px] px-8">
+
+    <ArticleGallery
+      images={galleryImages}
+    />
+
+  </div>
+
+</section>
       <section className="relative z-10 pb-32">
 
         <div className="mx-auto max-w-[1100px] rounded-[3rem] border border-white/30 bg-white/72 px-12 py-16 shadow-[0_20px_60px_rgba(0,0,0,0.05)] backdrop-blur-2xl md:px-20">

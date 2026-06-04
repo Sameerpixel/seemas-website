@@ -56,6 +56,20 @@ export const articleType = defineType({
       },
     }),
 
+  defineField({
+  name: "galleryImages",
+  title: "Additional Gallery Images",
+  type: "array",
+  of: [
+    {
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+  ],
+}),
+
     defineField({
       name: 'featured',
       title: 'Featured Article',

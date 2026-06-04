@@ -138,90 +138,91 @@ export default async function Home() {
         <div className="grid h-[calc(100%-90px)] grid-cols-[40%_40%_20%] gap-5">
 
           {/* KNOW MORE */}
-          <div className="flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/70 shadow-[0_12px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl">
+          {/* KNOW MORE */}
+<div className="flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/70 shadow-[0_12px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl">
 
-            <div className="relative h-[48%] overflow-hidden bg-[linear-gradient(135deg,#edf2f7_0%,#f7f1f2_100%)]">
+  {/* IMAGE */}
+  <div className="relative h-[78%] overflow-hidden">
 
-              {/* SOFT PLACEHOLDER */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_60%)]" />
+    <img
+      src="/about/know-more.jpg"
+      alt="Dr. Seema"
+      className="h-full w-full object-cover transition duration-700 hover:scale-105"
+    />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1f1b18]/35 via-transparent to-transparent" />
+    <div className="absolute inset-0 bg-gradient-to-t from-[#1f1b18]/45 via-transparent to-transparent" />
 
-              <div className="absolute bottom-0 p-7 text-[#4d4641]">
+    <div className="absolute bottom-0 left-0 p-8 text-white">
 
-                <p className="text-[11px] uppercase tracking-[0.24em] text-[#7a6b66]">
-                  About The Therapist
-                </p>
+      <p className="text-[11px] uppercase tracking-[0.24em] text-white/80">
+        About The Doctor
+      </p>
 
-                <h2 className="mt-2 text-5xl font-semibold">
-                  Know More
-                </h2>
+      <h2 className="mt-2 text-5xl font-semibold">
+        Know More
+      </h2>
 
-              </div>
+    </div>
 
-            </div>
+  </div>
 
-            <div className="flex flex-1 flex-col justify-between p-8">
+  {/* CTA */}
+  <div className="flex flex-1 items-center justify-center p-8">
 
-              <p className="text-[21px] leading-[1.7] text-[#4d4641]">
-                Explore the philosophy, lived experiences,
-                interdisciplinary practice, and advocacy shaping
-                over twenty-five years of meaningful work.
-              </p>
+    <a
+      href="/explore"
+      className="inline-flex items-center rounded-full border border-[#dce7f1] bg-[#eef4fa] px-9 py-5 text-[20px] uppercase tracking-[0.15em] text-[#4d6781] transition hover:bg-[#e4edf6]"
+    >
+      Explore More
+    </a>
 
-              <a
-                href="/explore"
-                className="inline-flex w-fit items-center rounded-full border border-[#dce7f1] bg-[#eef4fa] px-9 py-5 text-[20px] uppercase tracking-[0.15em] text-[#4d6781] transition hover:bg-[#e4edf6]"
-              >
-                Explore More
-              </a>
+  </div>
 
-            </div>
-          </div>
+</div>
 
           {/* GET HELP */}
           <div className="flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/70 shadow-[0_12px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl">
 
-            <div className="relative h-[48%] overflow-hidden bg-[linear-gradient(135deg,#edf2f7_0%,#f7f1f2_100%)]">
+  {/* IMAGE */}
+  <div className="relative h-[78%] overflow-hidden">
 
-              {/* SOFT PLACEHOLDER */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_60%)]" />
+    <img
+      src="/about/get-help.jpg"
+      alt="Consultation"
+      className="h-full w-full object-cover transition duration-700 hover:scale-105"
+    />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1f1b18]/35 via-transparent to-transparent" />
+    <div className="absolute inset-0 bg-gradient-to-t from-[#1f1b18]/45 via-transparent to-transparent" />
 
-              <div className="absolute bottom-0 p-7 text-[#4d4641]">
+    <div className="absolute bottom-0 left-0 p-8 text-white">
 
-                <p className="text-[11px] uppercase tracking-[0.24em] text-[#7a6b66]">
-                  Start Your Journey
-                </p>
+      <p className="text-[11px] uppercase tracking-[0.24em] text-white/80">
+        Start Your Journey
+      </p>
 
-                <h2 className="mt-2 text-5xl font-semibold">
-                  Get Help
-                </h2>
+      <h2 className="mt-2 text-5xl font-semibold">
+        Get Help
+      </h2>
 
-              </div>
+    </div>
 
-            </div>
+  </div>
 
-            <div className="flex flex-1 flex-col justify-between p-8">
+  {/* CTA */}
+  <div className="flex flex-1 items-center justify-center p-8">
 
-              <p className="text-[21px] leading-[1.7] text-[#4d4641]">
-                Professional consultations focused on emotional
-                wellness, disability, family systems, education,
-                and sustainable empowerment.
-              </p>
+    <a
+      href="https://wa.me/917994155575"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center rounded-full border border-[#eedde1] bg-[#faf4f5] px-9 py-5 text-[20px] uppercase tracking-[0.15em] text-[#8b5d66] transition hover:bg-[#f3e9eb]"
+    >
+      Book Consultation
+    </a>
 
-              <a
-  href="https://wa.me/917994155575"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block w-fit rounded-full border border-[#eedde1] bg-[#faf4f5] px-9 py-5 text-[20px] uppercase tracking-[0.15em] text-[#8b5d66] transition hover:bg-[#f3e9eb]"
->
-  Book Consultation
-</a>
+  </div>
 
-            </div>
-          </div>
+</div>
 
           {/* MOVING GALLERY */}
 <div className="h-full overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/70 p-4 shadow-[0_12px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl">

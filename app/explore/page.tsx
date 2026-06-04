@@ -7,11 +7,10 @@ const sections = [
   {
     title: "About",
     subtitle: "Lived Experiences & Professional Journey",
-    description:
-      "Dr. Seema Girija Lal (Ph.D.) is a mental health, disability, and education consultant and trainer with over twenty-five years of professional experience across India and the United Arab Emirates.",
-
     button: "View About",
     href: "/about",
+
+    image: "/explore/about.jpg",
 
     tint: {
       bg: "bg-[linear-gradient(135deg,#b9d9f7_0%,#dcecfb_40%,#f4f9fd_100%)]",
@@ -25,11 +24,10 @@ const sections = [
   {
     title: "Articles",
     subtitle: "Research, Reflection & Advocacy",
-    description:
-      "Latest writings, reflections, and perspectives centred around education, empowerment, disability, inclusion, and lived experiences.",
-
     button: "Read More",
     href: "/articles",
+
+    image: "/explore/articles.jpg",
 
     tint: {
       bg: "bg-[linear-gradient(135deg,#e2d8f7_0%,#f0eafe_45%,#faf7ff_100%)]",
@@ -43,11 +41,10 @@ const sections = [
   {
     title: "YouTube",
     subtitle: "Talks, Sessions & Conversations",
-    description:
-      "Latest interviews, workshops, educational sessions, and advocacy-focused conversations across platforms.",
-
     button: "Watch Now",
     href: "/youtube",
+
+    image: "/explore/youtube.jpg",
 
     tint: {
       bg: "bg-[linear-gradient(135deg,#f3b2b2_0%,#f7d0d0_45%,#fff1f1_100%)]",
@@ -61,11 +58,10 @@ const sections = [
   {
     title: "Gallery",
     subtitle: "Moments Across The Journey",
-    description:
-      "A visual timeline of meaningful work, training programmes, collaborations, speaking engagements, and community experiences.",
-
     button: "View Gallery",
     href: "/gallery",
+
+    image: "/explore/gallery.jpg",
 
     tint: {
       bg: "bg-[linear-gradient(135deg,#c7e8c9_0%,#dff3df_45%,#f4fcf4_100%)]",
@@ -120,7 +116,7 @@ export default async function ExplorePage() {
       {/* CONTENT */}
       <section className="relative z-10 mx-auto max-w-[1750px] px-6 pb-20 pt-8">
 
-        <div className="grid grid-cols-2 gap-8">
+       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-4">
 
           {sections.map((section, index) => (
             <div
@@ -129,50 +125,33 @@ export default async function ExplorePage() {
             >
 
               {/* PREVIEW SLIDESHOW */}
-              <div
-                className={`relative h-[320px] overflow-hidden ${section.tint.bg}`}
-              >
+              <div className="relative h-[280px] overflow-hidden">
 
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_60%)]" />
+  <img
+    src={section.image}
+    alt={section.title}
+    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+  />
 
-                {/* SLIDES */}
-                <div className="absolute inset-0 flex items-center justify-center">
+  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
 
-                  <div className="relative h-[230px] w-[82%]">
+  <div className="absolute bottom-0 left-0 z-20 p-6 text-white">
 
-                    <div className="absolute left-0 top-6 h-[200px] w-[72%] rounded-[2rem] bg-white/50 shadow-xl backdrop-blur-xl" />
+    <p className="text-[11px] uppercase tracking-[0.24em] text-white/80">
+      {section.subtitle}
+    </p>
 
-                    <div className="absolute left-10 top-0 z-10 h-[220px] w-[72%] rounded-[2rem] border border-white/40 bg-white/80 shadow-2xl backdrop-blur-2xl" />
+    <h3 className="mt-2 text-4xl font-black tracking-[-0.03em]">
+      {section.title}
+    </h3>
 
-                    <div className="absolute right-0 top-10 h-[190px] w-[62%] rounded-[2rem] bg-white/40 shadow-lg backdrop-blur-xl" />
+  </div>
 
-                  </div>
-
-                </div>
-
-                {/* TEXT */}
-                <div className="absolute bottom-0 z-20 p-8 text-[#3d3733]">
-
-                  <p
-                    className={`text-[12px] uppercase tracking-[0.28em] ${section.tint.accent}`}
-                  >
-                    {section.subtitle}
-                  </p>
-
-                  <h3 className="mt-3 text-5xl font-black tracking-[-0.03em]">
-                    {section.title}
-                  </h3>
-
-                </div>
-
-              </div>
-
+</div>
               {/* CONTENT */}
-              <div className="flex flex-col justify-between p-8">
+              <div className="flex items-center justify-center p-5">
 
-                <p className="text-[22px] leading-[1.85] text-[#4d4641]">
-                  {section.description}
-                </p>
+               
 
                 <a
                   href={section.href}

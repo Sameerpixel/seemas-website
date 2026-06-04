@@ -6,11 +6,9 @@ export const articlesQuery = `
   category,
   publishedAt,
   excerpt,
-  body,
-  coverImage,
-  "slug": slug.current
+  "slug": slug.current,
+  coverImage
 }
-
 `
 export const galleryQuery = `
 *[_type == "gallery"] | order(date desc){
